@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pet;
+
+option go_package = "github.com/webbsalad/pet;pet";
+
+import "validate/validate.proto";
+
+message Pet {
+    string ascii = 1 [(validate.rules).string = {min_len: 1}];
+    string description = 2 [(validate.rules).string = {min_len: 1}];
+  }
